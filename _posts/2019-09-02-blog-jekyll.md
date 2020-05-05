@@ -73,6 +73,6 @@ una vez hecho esto debemos actualizar nuestro bundle con:
 bundle update
 ~~~
 
-En este punto podemos ver nuestra pagina y una lista de publicaciones, por defecto jekyll provee un diseño y una estructura que podemos modificar por medio de un motor de templates llamado [liquid](https://jekyllrb.com/docs/liquid/), también tenemos una carpeta `_post` la cual va a contener nuestros artículos que deben nombrarse con el siguiente formato: `YY-MM-DD-TITLE.md` y se editaran con [markdown](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet). El siguiente ejercicio es modificar y entender jekyll, pero lo dejaremos para un siguiente articulo. 
+En este punto podemos ver nuestra pagina y una lista de publicaciones, por defecto jekyll provee un diseño y una estructura que podemos modificar por medio de un motor de templates llamado [liquid](https://jekyllrb.com/docs/liquid/), también tenemos una carpeta `_post` la cual va a contener nuestros artículos que deben nombrarse con el siguiente formato: `YY-MM-DD-TITLE.md` y se editaran con [markdown](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet). El siguiente ejercicio es modificar y entender jekyll, pero lo dejaremos para un siguiente [articulo]({{ site.baseurl }}{% link _posts/2020-05-04-jekyll.md %}). 
 
 
