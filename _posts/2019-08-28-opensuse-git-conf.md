@@ -6,6 +6,8 @@ author: jhonny111s
 ---
 
 ----------------
+Generalmente cuando pretendemos crear una llave ssh es porque queremos configurar algún repositorio que tenemos almacenado en github, gitlab o bitbucket, para acceder a este sin estar digitando usuario y contraseña y esto pasa cuando lo clonamos con http, sin embargo tenemos la opción de seleccionar ssh.
+
 ## Crear ssh key en Opensuse
 
 Una llave ssh básicamente es una credencial encriptada que contiene información con la cual nos podemos autenticar en una aplicación o servicio sin la necesidad de ingresar usuario y contraseña 
