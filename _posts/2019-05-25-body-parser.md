@@ -6,6 +6,8 @@ author: jhonny111s
 ---
 
 ----------------
+Body parser es un middleware o utilidad muy usada por el framework `expressjs` que se encarga de agregar a nuestro request el campo *body* de acuerdo al tipo de contenido enviado en las cabeceras http.
+
 ## Que es body parser?
 
 {% include badge.html content="Repositorio" repo="https://github.com/jhonny111s/examples/tree/master/bodyParser" %}

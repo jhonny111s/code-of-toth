@@ -5,9 +5,12 @@ categories : [react, javascript]
 author: jhonny111s
 ---
 --------------------
+Vamos a comenzar nuestra primera aplicación en react con el bien conocido *todo list*  vamos a utilizar create-react-app para programar sin tener que pensar en alguna configuración.
+
+
 ## Todo List en React 
 
-Para comenzar nuestra primera aplicacion en react, el bien conocido *todo list*  vamos a utilizar [create-react-app](https://github.com/facebook/create-react-app "proyecto basico preconfigurado en react") para programar sin tener que pensar en alguna configuración, como más adelante la idea es comenzar a trabajar con *TypeScript* y entender un poco mejor la estructura, en el repositorio iniciamos con [create-react-app-typescript](https://github.com/wmonk/create-react-app-typescript) sin pensar aun en el manejo que vamos a dar.
+Para comenzar nuestra primera aplicación en react, el bien conocido *todo list*  vamos a utilizar [create-react-app](https://github.com/facebook/create-react-app "proyecto basico preconfigurado en react") para programar sin tener que pensar en alguna configuración, como más adelante la idea es comenzar a trabajar con *TypeScript* y entender un poco mejor la estructura, en el repositorio iniciamos con [create-react-app-typescript](https://github.com/wmonk/create-react-app-typescript) sin pensar aun en el manejo que vamos a dar.
 
 Antes de explicar nuestra aplicación, debemos entender un poco la estructura que en general tiene una aplicación en react, el primer archivos que debemos observar es el ***index.tsx*** el cual usa reactDom.render para incrustar nuestra instacia (las etiquetas en react son clases) llamada App en el elemento html root del ***index.html***.
 

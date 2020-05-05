@@ -6,6 +6,8 @@ author: jhonny111s
 ---
 
 ----------------
+Usualmente al comenzar con un proyecto debemos tratar de ser lo más ordenados posibles para que el proyecto no se convierta en un caos y es por eso que se han creado metodologías para crear ramas, como por ejemplo `gitflow workflow` el cual define un modelo para manejar grandes proyectos. Las siguientes son las ramas que usualmente he usado en proyectos y que están muy alineadas con lo que se propone en la industria.
+
 ## Estrategia para ramificar un proyecto.
 
 Usualmente al comenzar con un proyecto y claro esta usar Git como herramienta de control de versiones, debemos tratar de ser lo más ordenados posibles para que el proyecto no se convierta en un caos y es por eso que se han creado metodologías para crear ramas, como por ejemplo [gitflow workflow](https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow) el cual define un modelo para manejar grandes proyectos. Las siguientes son las ramas que usualmente he usado en proyectos y que están muy alineadas con lo que se propone en la industria.

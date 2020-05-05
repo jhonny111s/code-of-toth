@@ -6,6 +6,8 @@ author: jhonny111s
 ---
 
 ----------------
+La idea de este artículo es mostrar cómo podemos utilizar github para alojar nuestra página de manera gratuita.
+
 ## Crear blog en github con jekyll
 
 {% include badge.html content="Repositorio" repo="https://github.com/jhonny111s/jekyll-example" %}
