@@ -10,7 +10,7 @@ Los frameworks de NodeJs nos proveen métodos para registrar nuestra ruta, inici
 
 ## Mi primer servidor con NodeJs 
 
-Un servidor web es como mínimo un servidor htttp aunque puede ser mucho más, un servidor http es aquel que entiendo las direcciones web (url), permite una comunicación bidireccional entre cliente y servidor, almacena y permite la manipulación de archivos. Entonces nodejs es un entorno de ejecución que nos permite crear aplicaciones y programar del lado del servidor usando javascript e eventos asincronos. Nodejs es la base de frameworks para crear aplicaciones web como `expressjs`, `fastify`, `nestjs`, entre otros ya que provee una cantidad de módulos que permiten desde la comunicación por http hasta la interacción con el sistema operativo 
+Un servidor web es como mínimo un servidor http aunque puede ser mucho más, un servidor http es aquel que entiendo las direcciones web (url), permite una comunicación bidireccional entre cliente y servidor, almacena y permite la manipulación de archivos. Entonces nodejs es un entorno de ejecución que nos permite crear aplicaciones y programar del lado del servidor usando javascript e eventos asíncronos. Nodejs es la base de frameworks para crear aplicaciones web como `expressjs`, `fastify`, `nestjs`, entre otros ya que provee una cantidad de módulos que permiten desde la comunicación por http hasta la interacción con el sistema operativo 
 
 
 {% include note.html content="Para mas información ver [servidor web](https://developer.mozilla.org/en-US/docs/Learn/Common_questions/What_is_a_web_server )" %}

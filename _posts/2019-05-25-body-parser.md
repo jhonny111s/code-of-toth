@@ -1,7 +1,7 @@
 ---
 title: "Body-parser"
 date: 2019-05-25
-categories : [nodejs, bodyParser]
+categories : [nodejs, course]
 author: jhonny111s
 ---
 
@@ -32,8 +32,7 @@ Cuando creamos un servidor a este se le pasan dos parámetros, `request` y `resp
 
 {% include note.html content="para más informacíon ver: [IncomingMessage](https://nodejs.org/api/http.html#http_class_http_incomingmessage), [stream.Readable](https://nodejs.org/api/stream.html#stream_class_stream_readable), [buffer](https://nodejs.org/api/buffer.html#buffer_buffer) " %}
 
-El siguiente [ejemplo](https://nodejs.org/en/docs/guides/anatomy-of-an-http-transaction/#request-body) muestra un POST  el cual debe debe leer el *body* desde un evento llamado `data`
-y concatenarlo y procesarlo en un evento `end`:
+El siguiente [ejemplo](https://nodejs.org/en/docs/guides/anatomy-of-an-http-transaction/#request-body) muestra un POST  el cual debe debe leer el *body* desde un evento llamado `data`, concatenarlo y procesarlo en un evento `end`:
 
 ~~~javascript
 // https://nodejs.org/api/stream.html#stream_event_data
