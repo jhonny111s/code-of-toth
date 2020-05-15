@@ -29,7 +29,7 @@ Los eventos son tal vez uno de los dos concepto más importante en nodejs ( `bac
 
 ## El modulo event
 
-En nodejs los módulos tienen eventos que nos ayudan a interactuar por medio de `on`,  por ejemplo cuando creamos un servidor con el módulo *http*, podemos suscribirnos al evento `request` y cada que un cliente haga una petición vamos a poder obtener datos como la ruta y el método que requieren para asi reaccionar con la respuesta adecuada.
+En nodejs la gran mayoría módulos tienen eventos que nos ayudan a interactuar por medio de `on`,  por ejemplo cuando creamos un servidor con el módulo *http*, podemos suscribirnos al evento `request` y cada que un cliente haga una petición vamos a poder obtener datos como la ruta y el método que requieren para asi reaccionar con la respuesta adecuada.
 
 {% include note.html content="Es importante que sea un evento ya que no va bloquear nuestro servidor por lo tanto podemos tener multiples request por conexión." %}
  
