@@ -12,20 +12,20 @@ El fork es un caso especial de *spawn* donde vamos a tener la capacidad de comun
 
 El modulo *child_process* se encarga de generar procesos, por medio de los procesos podemos correr comandos como en una terminal, por lo tanto nos permite interactuar con el sistema operativo y es ideal para correr tareas con alta carga de CPU de manera aislada (procesos en segundo plano) y así no afecte nuestro proceso principal.
 
-{% include note.html content="Un proceso es una instancia de un programa escrito en cualquier lenguage. Cuando creamos un servidor con express se genera un proceso y por lo tanto todo funciona en un solo hilo, a menos que generemos un nuevo proceso por medio de child_process, workers o clusters." %}
+{% include note.html content="Un proceso es una instancia de un programa escrito en cualquier lenguaje. Cuando creamos un servidor con express se genera un proceso y por lo tanto todo funciona en un solo hilo, a menos que generemos un nuevo proceso por medio de child_process, workers o clusters." %}
 
-Basicamente child process nos permite acceder a las funcionalidades del sistema operativo y poder correr cualquier comando tal cual lo hacemos en nuestra linea de comandos a travez de bash, concatenando comandos por medio de *pipe* como lo hacemos en linux, es muy importante tener el cuanta que los camandos que usemos estan directamente vinculados a un sistema operativo (windows, linux, unix).
+Básicamente child process nos permite acceder a las funcionalidades del sistema operativo y poder correr cualquier comando tal cual lo hacemos en nuestra linea de comandos a través de bash, concatenando comandos por medio de *pipe* como lo hacemos en linux, es muy importante tener en cuanta que los comandos que usemos están directamente vinculados a un sistema operativo (windows, linux, unix).
 
 Existen algunas formas de generar un nuevo proceso por medio de child process, las cuales veremos a continuación:
 
 ## exec
 
-Genera una shell donde se corre un comando, se genera el proceso, se guarda en un buffer el resultado hasta que termine la tarea y finalmente envia el resultado.
+Genera una shell donde se corre un comando, se genera el proceso, se guarda en un buffer el resultado hasta que termine la tarea y finalmente envía el resultado.
 
 
-{% include note.html content="Una *shell* es un programa que recibe comandos por medio de un dispositivo de entrada (usualmente el teclado) y se los envia al sistema operativo para que realice alguna acción. Agunos de los programas más conocidos para esto son **bash**, **sh** y **zsh**."%}
+{% include note.html content="Una *shell* es un programa que recibe comandos por medio de un dispositivo de entrada (usualmente el teclado) y se los envía al sistema operativo para que realice alguna acción. Algunos de los programas más conocidos para esto son **bash**, **sh** y **zsh**."%}
 
-- Al utilizar la shell podemos usar la sintasix que nos brinda y por lo tanto tener mucho más rango de manejo, al tener disponible todos los comandos que usamos en nuestra terminal.
+- Al utilizar la shell podemos usar la sintaxís que nos brinda y por lo tanto tener mucho más rango de manejo, al tener disponible todos los comandos que usamos en nuestra terminal.
 - Usar la shell puede abrir huecos de seguridad, por lo que nunca debe permitirse una interacción directa del usuario.
 - Si el tamaño de la información esperada es muy grande (> 200KB) y no cabe en el buffer, se va presentar un error por lo tanto debemos optar por otro método.
 - Si se require consumir o procesar datos en tiempo real, no debemos usar exec.
@@ -53,7 +53,7 @@ exec('ls -lh', (error, stdout, stderr) => {
 
 ## execFile
 
-Funciona muy similar a *exec*, la unica diferencia es que no genera una shell sino inmediatamente un proceso, lo que lo hace un poco más eficiente y debemos especificar la ruta del archivo o aplicación a correr. Debemos tener en cuenta que algunos comandos para poderlos ejecutar obligatoriamente necesitamos crear una shell.
+Funciona muy similar a *exec*, la única diferencia es que no genera una shell sino inmediatamente un proceso, lo que lo hace un poco más eficiente y debemos especificar la ruta del archivo o aplicación a correr. Debemos tener en cuenta que algunos comandos para poderlos ejecutar obligatoriamente necesitamos crear una shell.
 
 ~~~javascript
 const { execFile } = require('child_process');
@@ -69,10 +69,10 @@ const child = execFile('node', ['file.js'], (error, stdout, stderr) => {
 
 ## spawn
 
-Genera un proceso hijo de manera asincrona, implementando la API de event emiter, esto quiere decir que podemos registrar funciones que hagan una determinada tarea cuando suceda un evento.
+Genera un proceso hijo de manera asíncrona, implementando la API de event emitter, esto quiere decir que podemos registrar funciones que hagan una determinada tarea cuando suceda un evento.
 
 - cuando se manejan grandes cantidades de datos, podemos usar spawn ya que esta basado en streams.
-- spawn es la versión más generica del process_child, ya que los demás estan construidos sobre este.
+- spawn es la versión más genérica del process_child, ya que los demás están construidos sobre este.
 
 ~~~javascript
 const { spawn } = require('child_process');
@@ -103,7 +103,7 @@ child.on('exit', (code) => {
 });
 ~~~
 
-El siguiente ejemplo muestra la posibilidad de combinar diferentes procesos por medio de los metodos de stdin y stdout, esto en la terminal podría ser: `echo "hello world" | wc`
+El siguiente ejemplo muestra la posibilidad de combinar diferentes procesos por medio de los métodos de stdin y stdout, esto en la terminal podría ser: `echo "hello world" | wc`
 
 ~~~javascript
 const { spawn } = require('child_process');
@@ -147,5 +147,5 @@ process.on('message', (msg) => {
 process.send({ msg: 'I am the child'});  
 ~~~
 
-- Cada proceso que se cree va tener su propio espacio en memoria, por lo tanto crear muchos procesos hijos es una mala practica ya que afecta directamente el rendimeinto de todo nuestro sistema.
-- cuando tenermos tareas que bloquean y demoran la respuesta al usuario, es conveniente separar estas tareas en procesos hijos para que así nuestra aplicación pueda respoder rapidamente.
+- Cada proceso que se cree va tener su propio espacio en memoria, por lo tanto crear muchos procesos hijos es una mala practica ya que afecta directamente el rendimiento de todo nuestro sistema.
+- Cuando tenemos tareas que bloquean y demoran la respuesta al usuario, es conveniente separar estas tareas en procesos hijos para que así nuestra aplicación pueda responder rápidamente.
