@@ -16,12 +16,24 @@ El modulo *child_process* se encarga de generar procesos, por medio de los proce
 
 Básicamente child process nos permite acceder a las funcionalidades del sistema operativo y poder correr cualquier comando tal cual lo hacemos en nuestra linea de comandos a través de bash, concatenando comandos por medio de *pipe* como lo hacemos en linux, es muy importante tener en cuanta que los comandos que usemos están directamente vinculados a un sistema operativo (windows, linux, unix).
 
+child_process y cluster (que vamos a ver en otro articulo), crean procesos que no comparten memoria, esto significa que nuestro sistema debe clonar la información y cada proceso va ser independiente, haciendo que nuestro sistema operativo tenga que disponer de más recursos haciendo lo más lento
+
+cuando se corre un programa con node se crea un procesos que contiene un solo hilo y un event loop, el cual va consumir recursos del sistema, por este motivo no es aconsejable crear demasiados procesos y por eso es preferible utilizar paquetes o soluciones ya optimizadas (ver workers).
+
+~~~bash
+ __Parent___          __child___
+|  process |        |  process |
+|  1 thread|        |  1 thread|
+|  1 event |        |  1 event |
+|    loop  |        |    loop  |
+|__________|        |__________|
+~~~
+
 Existen algunas formas de generar un nuevo proceso por medio de child process, las cuales veremos a continuación:
 
 ## exec
 
 Genera una shell donde se corre un comando, se genera el proceso, se guarda en un buffer el resultado hasta que termine la tarea y finalmente envía el resultado.
-
 
 {% include note.html content="Una *shell* es un programa que recibe comandos por medio de un dispositivo de entrada (usualmente el teclado) y se los envía al sistema operativo para que realice alguna acción. Algunos de los programas más conocidos para esto son **bash**, **sh** y **zsh**."%}
 
