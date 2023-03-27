@@ -1,0 +1,6 @@
+{
+    "yaml.schemas": {
+        "file:///Users/jhonny111s/.vscode/extensions/docsmsft.docs-yaml-1.0.0/dist/toc.schema.json": "/toc\\.yml/i",
+        "https://json.schemastore.org/jekyll.json": "file:///Users/jhonny111s/Documents/code-of-toth/_config.yml"
+    }
+}
