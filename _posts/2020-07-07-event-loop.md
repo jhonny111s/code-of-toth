@@ -97,7 +97,7 @@ foo()
 */
 ~~~
 
-![event loop example 1]({{site.url}}/assets/images/loop01.png)
+![event loop example 1]({{site.baseurl}}/assets/images/loop01.png)
 
 ### Timers
 
@@ -149,7 +149,7 @@ foo()
 */
 ~~~
 
-![event loop example 2]({{site.url}}/assets/images/loop02.png)
+![event loop example 2]({{site.baseurl}}/assets/images/loop02.png)
 
 Como se puede observar en la imagen cuando entra al event loop setTimeout, primero entra a la fase de timer donde va a comenzar a registrar el paso del tiempo, luego va a poner pendiente el callback que contiene la función *bar*, mientras la fase de poll esta constantemente preguntando si algo se libero para ejecutarlo.
 
@@ -177,7 +177,7 @@ foo();
  */
 ~~~
 
-![event loop example 3]({{site.url}}/assets/images/loop03.png)
+![event loop example 3]({{site.baseurl}}/assets/images/loop03.png)
 
 En este ejemplo podemos tener dos respuestas dependiendo de lo rápido que nuestro ordenador ejecute un proceso, recordemos que usamos un delay de cero con setTimeout por lo tanto al llegar a la fase de poll, puede estar listo o no.
 
@@ -208,7 +208,7 @@ foo();
  */
 ~~~
 
-![event loop example 4]({{site.url}}/assets/images/loop04.png)
+![event loop example 4]({{site.baseurl}}/assets/images/loop04.png)
 
 En este ejemplo tenemos algo muy similar al anterior, la diferencia radica en que existe un callback de readfile que contiene settimeout y setimmediate. En este ejemplo siempre se va a ejecutar setImmediate primero y esto se debe a que cuando estamos dentro de un callback nos vamos a encontrar en una fase en este caso poll (ejecutamos toda operación I/O) y debemos continuar en el orden.
 
@@ -241,7 +241,7 @@ foo();
 */
 ~~~
 
-![event loop example 5]({{site.url}}/assets/images/loop05.png)
+![event loop example 5]({{site.baseurl}}/assets/images/loop05.png)
 
 En el ejemplo anterior se priorizan los tick y van a ser lo primero en entrar al event loop, por lo tanto se ejecutan los dos consoles, y luego continua trabajando como lo hemos estado haciendo.
 
@@ -289,7 +289,7 @@ foo();
  */
 ~~~
 
-![event loop example 6]({{site.url}}/assets/images/loop06.png)
+![event loop example 6]({{site.baseurl}}/assets/images/loop06.png)
 
 El ejemplo anterior muestra la misma teoria todo junto, para estudiarla e interirorizar los pasos
 
