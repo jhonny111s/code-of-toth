@@ -241,7 +241,7 @@ foo();
 */
 ~~~
 
-![event loop example 5]({{base}}/assets/images/loop05.png)
+![event loop example 5]({{site.url}}/assets/images/loop05.png)
 
 En el ejemplo anterior se priorizan los tick y van a ser lo primero en entrar al event loop, por lo tanto se ejecutan los dos consoles, y luego continua trabajando como lo hemos estado haciendo.
 
