@@ -53,7 +53,7 @@ En este ejemplo se abstraen las fases necesarias para poder resolver la función
 
 Nuestro event loop tiene 6 fases y cada una con una responsabilidad, cada fase funciona como una cola FIFO (primero en entrar, primero en salir)y siempre que terminamos ese ciclo y volvemos a empezar lo llamamos una marca (tick).
 
-![Event Loop]({{site.url}}/assets/images/eventloop.png)
+![Event Loop]({{site.baseurl}}/assets/images/eventloop.png)
 
 - timers: En esta fase se ejecutan los callback que tienen un tiempo programado (`setTimeout()` and `setInterval()`).
 - pending callbacks: Esta fase ejecuta un callback que debe esperar una operación no bloqueante I/O. Casi todo en nodejs son callbacks.
