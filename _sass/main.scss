@@ -1,2 +1,14 @@
 @import "syntax_highlight",
 "bootstrap";
+
+table {
+    @extend .table;
+  }
+  blockquote {
+    @extend .blockquote;
+  }
+  .footer {
+      padding-top: 1rem;
+      min-height: 10rem;
+  }
+  
