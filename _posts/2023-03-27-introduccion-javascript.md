@@ -1,7 +1,7 @@
 ---
 title: "Introducción a javascript"
 date: 2023-03-27
-categories : [nodejs, course, javascript]
+categories: nodejs course javascript
 author: jhonny111s
 ---
 
