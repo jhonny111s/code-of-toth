@@ -3,6 +3,8 @@ title: "prototipos"
 date: 2023-11-09
 categories : [nodejs, course]
 author: jhonny111s
+lesson_name: Conceptos Avanzados
+lesson_order: 2.3
 ---
 
 # Descifrando los Prototipos en JavaScript
