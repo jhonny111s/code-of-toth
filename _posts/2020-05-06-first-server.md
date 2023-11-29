@@ -3,6 +3,8 @@ title: "First Server"
 date: 2020-05-06
 categories : [nodejs, course]
 author: jhonny111s
+lesson_name: Modulos core
+lesson_order: 3.3
 ---
 
 ----------------
