@@ -1,13 +1,13 @@
 ---
 title: "Conceptos basicos nodeJs"
 date: 2023-10-20
-categories : [nodejs, course]
+categories: [nodejs, course]
 author: jhonny111s
 lesson_name: Introducción
 lesson_order: 1.8
 ---
 
---------------
+---
 
 # Fundamentos de JavaScript: Variables y Operadores
 
@@ -225,9 +225,9 @@ let num = 10;
 let str = "10";
 
 if (num == str) {
-    console.log("Son iguales");
+  console.log("Son iguales");
 } else {
-    console.log("No son iguales");
+  console.log("No son iguales");
 }
 ```
 
@@ -242,9 +242,9 @@ let num = 10;
 let str = "10";
 
 if (num === str) {
-    console.log("Son iguales");
+  console.log("Son iguales");
 } else {
-    console.log("No son iguales");
+  console.log("No son iguales");
 }
 ```
 
@@ -279,3 +279,59 @@ Mediante la función `Number()`, convertimos explícitamente una cadena en un n�
 Para evitar problemas con la coerción, es importante comprender cómo funcionan las conversiones en JavaScript. Puedes optar por utilizar operadores estrictos, como `===` para comparaciones, que también consideran el tipo de dato. Además, conviene realizar conversiones explícitas cuando sea necesario para asegurarse de que los tipos de datos sean los esperados.
 
 La coerción es una característica poderosa de JavaScript, pero puede ser sorprendente si no se maneja adecuadamente. Con una comprensión sólida de cómo se lleva a cabo la coerción, puedes escribir código más robusto y evitar errores inesperados.
+
+# Profundizando
+
+## Hoisting
+
+El "hoisting" o "elevación" es un comportamiento en JavaScript donde las declaraciones de variables y funciones se mueven, o son "elevadas", a la parte superior de su ámbito actual durante la fase de compilación, antes de que el código sea ejecutado.
+
+Es importante notar que solo las declaraciones son "elevadas", no las inicializaciones. Esto significa que puedes referenciar una variable antes de que haya sido declarada, pero no antes de que haya sido inicializada.
+
+Con `var`, esto puede llevar a resultados inesperados:
+
+```javascript
+console.log(myVar); // undefined, not ReferenceError
+var myVar = 5;
+console.log(myVar); // 5
+```
+
+En este caso, la declaración `var` myVar es "elevada" a la parte superior del ámbito, pero la inicialización myVar = 5 no lo es. Por eso el primer console.log(myVar) devuelve undefined en lugar de un error de referencia.
+
+```javascript
+var myVar; // declaración elevada
+console.log(myVar);
+myVar = 5;
+console.log(myVar); // 5
+```
+
+Aunque var es elevado al ámbito de la función más cercana, `let` y `const` son elevados al ámbito del bloque más cercano. Aunque todas son "elevadas", let y const no son accesibles hasta que su declaración es evaluada, lo que se conoce como la "zona muerta temporal"
+
+```javascript
+// En este punto del código, debido al hoisting:
+// - myVar existe pero su valor es undefined
+// - myLet y myConst existen en el ámbito temporalmente muerto y no pueden ser accedidos
+
+console.log(myVar); // undefined
+console.log(myLet); // ReferenceError
+console.log(myConst); // ReferenceError
+
+var myVar = 1;
+let myLet = 2;
+const myConst = 3;
+```
+
+Este comportamiento puede ayudar a prevenir errores y hacer que tu código sea más predecible.
+
+
+## Buenas practicas
+
+Declarar e inicializar variables al comienzo de su ámbito es una buena práctica por varias razones:
+
+- Evita confusiones con el hoisting.
+
+- Mejora la legibilidad del código: Cuando todas las variables se declaran e inicializan al comienzo de su ámbito, es más fácil para otros desarrolladores (o para ti mismo en el futuro) entender qué variables están en juego en ese ámbito.
+
+- Previene errores de referencia: Si intentas usar una variable antes de declararla, obtendrás un error de referencia. Declarar todas las variables al comienzo ayuda a prevenir estos errores.
+
+- Ayuda a gestionar la memoria: Si sabes desde el principio qué variables necesitarás, puedes declararlas todas juntas, lo que puede ayudar a tu programa a gestionar la memoria de manera más eficiente.

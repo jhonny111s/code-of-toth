@@ -3,6 +3,8 @@ title: "Body-parser"
 date: 2019-05-25
 categories : [nodejs, course]
 author: jhonny111s
+lesson_name: Modulos core
+lesson_order: 3.6
 ---
 
 ----------------

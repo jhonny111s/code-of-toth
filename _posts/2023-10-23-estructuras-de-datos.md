@@ -209,7 +209,7 @@ Estos son algunos de los objetos incorporados más utilizados en JavaScript. Cad
 
 ## Profundizando
 
-### El objeto `Array``
+### El objeto `Array`
 
 En JavaScript, un array es un tipo especial de objeto que se utiliza para almacenar múltiples valores en una única variable. Aunque los arrays tienen un comportamiento y sintaxis especiales para acceder a los elementos, internamente son objetos.
 
@@ -230,6 +230,71 @@ Accessors (Accesores): También conocidos como "getters", son funciones que se u
 Mutators (Mutadores): También conocidos como "setters", son funciones que se utilizan para establecer el valor de una propiedad específica. Permiten que el valor de una propiedad sea calculado dinámicamente cuando se establece.
 
 La diferencia principal entre los accesores y mutadores y los métodos regulares es que los accesores y mutadores se utilizan para controlar el acceso a las propiedades de un objeto, mientras que los métodos regulares pueden realizar cualquier tipo de operación.
+
+### Referencias
+
+En Node.js, y en JavaScript en general, los objetos y arrays son conocidos como valores de referencia. A diferencia de los valores primitivos (como números, strings, booleanos, `null`, y `undefined`), cuando asignas un objeto o array a una variable, lo que realmente estás asignando es una referencia a ese objeto o array, no el objeto o array en sí.
+
+Esto significa que si asignas un objeto a otra variable, ambas variables apuntan al mismo objeto en la memoria, no a copias separadas del objeto. Por lo tanto, si modificas el objeto a través de una de las variables, los cambios se reflejarán cuando accedas al objeto a través de la otra variable.
+
+```javascript
+let obj1 = { value: 1 };
+let obj2 = obj1;
+
+obj2.value = 2;
+
+console.log(obj1.value);
+```
+
+En este ejemplo, `obj1` y `obj2` apuntan al mismo objeto. Cuando cambias obj2.value, también estás cambiando obj1.value, porque ambos apuntan al mismo objeto.
+
+Es importante tener en cuenta este comportamiento al trabajar con objetos y arrays en Node.js, ya que puede tener implicaciones en cómo se comporta tu código. Por ejemplo, si pasas un objeto a una función y la función modifica el objeto, los cambios se reflejarán fuera de la función. Esto puede ser útil, pero también puede ser fuente de errores si no se espera este comportamiento.
+
+#### Crear una nueva copia
+
+En JavaScript, hay varias formas de hacer una copia de un objeto o un array. Aquí te dejo algunas de ellas:
+
+***Para objetos:***
+
+**Object.assign**: Esta función crea una copia superficial de un objeto. Sin embargo, solo copia las propiedades del primer nivel. Las propiedades de los niveles más profundos se copian por referencia.
+
+```javascript
+let obj1 = { a: 1, b: 2 };
+let obj2 = Object.assign({}, obj1);
+```
+
+**Spread operator (...)**: Este operador también crea una copia superficial de un objeto.
+
+```javascript
+let obj1 = { a: 1, b: 2 };
+let obj2 = { ...obj1 };
+```
+
+
+***Para arrays:***
+
+**Array.prototype.slice**: Este método devuelve una copia superficial de una porción de un array.
+
+```javascript
+let arr1 = [1, 2, 3];
+let arr2 = arr1.slice();
+```
+
+**Array.prototype.concat**: Este método se utiliza para combinar dos o más arrays. Sin argumentos, devuelve una copia del array original.
+
+```javascript
+let arr1 = [1, 2, 3];
+let arr2 = arr1.concat();
+```
+
+**Spread operator (...)**: Este operador también crea una copia superficial de un array.
+
+```javascript
+let arr1 = [1, 2, 3];
+let arr2 = [...arr1];
+```
+
+Recuerda que todas estas técnicas crean copias superficiales. Si necesitas una copia profunda, puedes usar `JSON.parse(JSON.stringify(obj))`, pero ten en cuenta que tiene limitaciones (no puede copiar funciones, no puede copiar objetos con referencias circulares, etc.). Para copias profundas más robustas, puedes considerar el uso de bibliotecas como lodash con su función `_.cloneDeep()`.
 
 
 
