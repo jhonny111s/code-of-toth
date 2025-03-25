@@ -3,6 +3,8 @@ title: "Event loop"
 date: 2020-07-07
 categories : [nodejs, course]
 author: jhonny111s
+lesson_name: Conceptos Avanzados
+lesson_order: 2.7
 ---
 
 --------------
@@ -180,6 +182,8 @@ foo();
 ![event loop example 3]({{site.url}}/assets/images/loop03.png)
 
 En este ejemplo podemos tener dos respuestas dependiendo de lo rápido que nuestro ordenador ejecute un proceso, recordemos que usamos un delay de cero con setTimeout por lo tanto al llegar a la fase de poll, puede estar listo o no.
+
+> setImmediate se ejecutara primero, incluso si hay timers programados con tiempos de retardo más cortos que el de setImmediate. Sin embargo, es importante tener en cuenta que esta prioridad se aplica solo dentro del mismo ciclo de event loop. Si hay setImmediate y timers programados en ciclos de event loop posteriores, se respetará el orden de ejecución original según los tiempos de retardo.
 
 ~~~javascript
 const fs = require('fs');

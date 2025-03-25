@@ -3,6 +3,8 @@ title: "First Server"
 date: 2020-05-06
 categories : [nodejs, course]
 author: jhonny111s
+lesson_name: Modulos core
+lesson_order: 3.5
 ---
 
 ----------------
@@ -318,3 +320,5 @@ if (
     res.end(err.message);
   }
 ~~~
+
+La implementación manual mostró cómo gestionar las rutas, aunque de manera simplificada, para entender mejor el funcionamiento interno de los frameworks. Al comprender ambos métodos, estamos mejor equipados para tomar decisiones informadas al desarrollar aplicaciones en Node.js, seleccionando la opción que mejor se adapte a nuestras necesidades y objetivos.

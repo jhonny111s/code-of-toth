@@ -3,6 +3,8 @@ title: "Módulos básicos"
 date: 2020-07-02
 categories : [nodejs, course]
 author: jhonny111s
+lesson_name: Modulos core
+lesson_order: 3.1
 ---
 
 --------------
@@ -40,6 +42,8 @@ try {
 ~~~
 
 Podemos explorar diferentes assertions sin embargo no es muy común utilizar esta modulo gracias a librerías mucho más especializadas.
+
+> Node recientemente libero un nuevo modulo llamado test, el cual vamos a explorar en más detalle en otro articulo, donde podremos usar tambien assert para crear unit test sin usar librerias extras.
 
 ## path
 
@@ -102,6 +106,8 @@ const params = new URLSearchParams([
   ]);
 console.log(params.toString());
 ~~~
+
+`new URL()` es una forma compatible con el estandar que manejan los navegadores para trabajar con urls y en terminos practicos es el que deberiamos usar, podemos hacer lo mismo con cualquiera de los dos, sin embargo require(url) se considera legacy.
 
 ## querystring
 
